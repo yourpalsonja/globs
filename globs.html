@@ -1,0 +1,45 @@
+<head>
+    <title>Globs</title>
+</head>
+
+<body>
+    <h1>Globs</h1>
+
+    {{> displayGlob}}
+
+    {{> createGlob}}
+</body>
+
+
+<template name="chartLegend">
+    {{#each person}}
+        {{name}}
+        <span class="chart-color" style="background: {{color}}"></span>
+    {{/each}}
+</template>
+
+
+<template name="displayGlob">
+    {{#each glob}}
+        <p>
+            {{design}}
+            {{html}}
+            {{css}}
+            {{engineering}}
+        </p>
+    {{/each}}
+</template>
+
+
+<template name="createGlob">
+    <form>
+        <input type="text" name="yourName" placeholder="Name">
+        <input type="text" name="globColor" placeholder="Glob Color">
+        <input type="text" name="designSkill" placeholder="Design">
+        <input type="text" name="cssSkill" placeholder="CSS">
+        <input type="text" name="htmlSkill" placeholder="HTML">
+        <input type="text" name="engineeringSkill" placeholder="Engineering">
+
+        <input type="submit" value="Make a Glob">
+    </form>
+</template>
